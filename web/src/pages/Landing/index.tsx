@@ -36,8 +36,8 @@ const Landing: React.FC = () => {
           </StudyAnchor>
 
           <GiveClassesAnchor href="">
-            <img src={giveClassesIcon} alt="Estudar"/>
-            Estudar
+            <img src={giveClassesIcon} alt="Dar aulas"/>
+            Dar aulas
           </GiveClassesAnchor>
         </ButtonsContainer>
 
