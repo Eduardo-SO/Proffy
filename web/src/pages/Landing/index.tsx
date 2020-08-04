@@ -21,7 +21,7 @@ import purpleHeartIcon from '../../images/icons/purple-heart.svg';
 const Landing: React.FC = () => {
   return (
     <PageLanding>
-      <PageLandingContent className="container">
+      <PageLandingContent>
         <LogoContainer>
           <img src={logoImg} alt="Proffy"/>
           <h2>Sua plataforma de estudos online</h2>
