@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const PageLanding = styled.div`
   width: 100vw;
@@ -115,7 +116,7 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-export const StudyAnchor = styled.a`
+export const StudyLink = styled(Link)`
   background-color: var(--color-primary-lighter);
 
   &:hover {
@@ -123,7 +124,7 @@ export const StudyAnchor = styled.a`
   }
   `;
 
-export const GiveClassesAnchor = styled.a`
+export const GiveClassesLink = styled(Link)`
   background-color: var(--color-secondary);
 
   &:hover {

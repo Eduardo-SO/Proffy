@@ -6,8 +6,8 @@ import {
   LogoContainer, 
   HeroImage, 
   ButtonsContainer,
-  StudyAnchor,
-  GiveClassesAnchor,
+  StudyLink,
+  GiveClassesLink,
   TotalConnections
 } from './styles';
 
@@ -30,15 +30,15 @@ const Landing: React.FC = () => {
         <HeroImage src={landingImg} alt="Plataforma de estudos"/>
 
         <ButtonsContainer>
-          <StudyAnchor href="">
+          <StudyLink to="/study">
             <img src={studyIcon} alt="Estudar"/>
             Estudar
-          </StudyAnchor>
+          </StudyLink>
 
-          <GiveClassesAnchor href="">
+          <GiveClassesLink to="/give-classes">
             <img src={giveClassesIcon} alt="Dar aulas"/>
             Dar aulas
-          </GiveClassesAnchor>
+          </GiveClassesLink>
         </ButtonsContainer>
 
         <TotalConnections>
