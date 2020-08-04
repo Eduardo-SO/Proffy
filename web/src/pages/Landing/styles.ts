@@ -13,6 +13,21 @@ export const PageLanding = styled.div`
 `;
 
 export const PageLandingContent = styled.div`
+  width: 90vw;
+  max-width: 700px;
+
+  @media (min-width: 1100px) {
+    display: grid;
+
+    grid-template-rows: 350px 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+      'logo hero hero'
+      'buttons buttons total'
+    ;
+
+    max-width: 1100px;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -30,10 +45,32 @@ export const LogoContainer = styled.div`
     font-size: 2.4rem;
     line-height: 4.6rem;
   }
+
+  @media (min-width: 1100px) {
+    grid-area: logo;
+    align-self: center;
+    margin: 0;
+
+    text-align: initial;
+
+    h2 {
+      font-size: 3.6rem;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
 `;
 
 export const HeroImage = styled.img`
   width: 100%;
+  
+  @media (min-width: 1100px) {
+    grid-area: hero;
+
+    justify-self: end;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -67,6 +104,15 @@ export const ButtonsContainer = styled.div`
       margin-right: .6rem;
     }
   }
+
+  @media (min-width: 1100px) {
+    grid-area: buttons;
+    justify-content: flex-start;
+
+    a {
+      font-size: 2.4rem;
+    }
+  }
 `;
 
 export const StudyAnchor = styled.a`
@@ -94,5 +140,10 @@ export const TotalConnections = styled.span`
 
   img {
     margin-left: .8rem;
+  }
+
+  @media (min-width: 1100px) {
+    grid-area: total;
+    justify-self: end;
   }
 `;
