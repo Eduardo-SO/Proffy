@@ -4,6 +4,10 @@ export const Container = styled.div`
   width: 100vw;
   max-width: 700px;
   height: 100vh;
+
+  @media(min-width: 700px) {
+    max-width: 100%;
+  }
 `;
 
 export const SearchTeachers = styled.form`
@@ -11,6 +15,15 @@ export const SearchTeachers = styled.form`
 
   label {
     color: var(--color-text-in-primary);
+  }
+
+  @media(min-width: 700px) {
+    position: absolute;
+    bottom: -28px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
   }
 `;
 
@@ -51,5 +64,11 @@ export const InputBlock = styled.div`
     height: 2px;
     
     background: var(--color-primary-light);
+  }
+
+  @media(min-width: 700px) {
+    & + div {
+      margin-top: 0rem;
+    }
   }
 `;
