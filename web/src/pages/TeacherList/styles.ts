@@ -76,6 +76,13 @@ export const InputBlock = styled.div`
 export const Content = styled.main`
   width: 90%;
   margin: 3.2rem auto;
+
+  @media (min-width: 700px) {
+    max-width: 740px;
+
+    margin: 0 auto;
+    padding: 3.2rem 0;
+  }
 `;
 
 export const TeacherItem = styled.article`
@@ -122,6 +129,10 @@ export const ItemHeader = styled.header`
       font-size: 1.6rem;
     }
   }
+
+  @media (min-width: 700px) {
+    padding: 3.2rem;
+  }
 `;
 
 export const ItemFooter = styled.footer`
@@ -164,6 +175,28 @@ export const ItemFooter = styled.footer`
 
     &:hover {
       background: var(--color-secundary-dark);
+    }
+  }
+
+  @media (min-width: 700px) {
+    padding: 3.2rem;
+
+    p {
+      strong {
+        display: initial;
+        margin-left: 1.6rem;
+      }
+    }
+
+    button {
+      justify-content: center;
+
+      width: 24.5rem;
+      font-size: 1.6rem;
+
+      img {
+        margin-right: 1.6rem;
+      }
     }
   }
 `;
