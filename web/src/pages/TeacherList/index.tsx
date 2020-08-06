@@ -2,11 +2,11 @@ import React from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
+import Input from '../../components/Input';
 
 import { 
   Container, 
   SearchTeachers, 
-  InputBlock,
   Content
 } from './styles';
 
@@ -15,20 +15,9 @@ const TeacherList: React.FC = () => {
     <Container>
       <PageHeader title="Estes são os proffys disponíveis.">
         <SearchTeachers>
-          <InputBlock>
-            <label htmlFor="subject">Matéria</label>
-            <input type="text" id="subject"/>
-          </InputBlock>
-          
-          <InputBlock>
-            <label htmlFor="week_day">Dia da semana</label>
-            <input type="text" id="week_day"/>
-          </InputBlock>
-
-          <InputBlock>
-            <label htmlFor="time">Hora</label>
-            <input type="text" id="time"/>
-          </InputBlock>
+          <Input name="subject" label="Matéria" type="text" />
+          <Input name="week_day" label="Dia da semana" type="text" />
+          <Input name="time" label="Hora" type="time" />
         </SearchTeachers>
       </PageHeader>
       <Content>
