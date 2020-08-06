@@ -5,6 +5,7 @@ const classesController = new ClassesController();
 
 const classesRouter = Router();
 
+classesRouter.get('/', classesController.index);
 classesRouter.post('/', classesController.create);
 
 export default classesRouter;
