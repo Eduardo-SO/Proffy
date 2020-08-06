@@ -52,6 +52,14 @@ export const HeaderContent = styled.div`
     line-height: 4.2rem;
   }
 
+  p {
+    max-width: 30rem;
+    margin-top: 2.4rem;
+    color: var(--color-text-in-primary);
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+
   @media(min-width: 700px) {
     flex: 1;
     display: flex;

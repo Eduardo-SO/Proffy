@@ -12,9 +12,10 @@ import {
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const PageHeader: React.FC<Props> = ({ title, children }) => {
+const PageHeader: React.FC<Props> = ({ title, description, children }) => {
   return (
     <Container>
         <TopBarContainer>
@@ -26,6 +27,7 @@ const PageHeader: React.FC<Props> = ({ title, children }) => {
 
         <HeaderContent>
           <strong>{title}</strong>
+          {description && <p>{description}</p>}
           {children}
         </HeaderContent>
       </Container>
