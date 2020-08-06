@@ -25,7 +25,7 @@ const PageHeader: React.FC<Props> = ({ title, description, children }) => {
           <img src={logoImg} alt="Proffy"/>
         </TopBarContainer>
 
-        <HeaderContent>
+        <HeaderContent className="header-content">
           <strong>{title}</strong>
           {description && <p>{description}</p>}
           {children}
