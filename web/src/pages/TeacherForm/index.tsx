@@ -23,6 +23,12 @@ const TeacherForm: React.FC = () => {
           <Input name="avatar" label="Avatar" type="text" />
           <Input name="whatsapp" label="Whatsapp" type="text" />
         </fieldset>
+
+        <fieldset>
+          <legend>Sobre a aula</legend>
+          <Input name="subject" label="Matéria" type="text" />
+          <Input name="cost" label="Custo da sua hora por aula" type="text" />
+        </fieldset>
       </Content>
     </Container>
   );
