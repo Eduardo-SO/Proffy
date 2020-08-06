@@ -5,7 +5,7 @@ const connectionsController = new ConnectionsController();
 
 const classesRouter = Router();
 
-// classesRouter.get('/', connectionsController.index);
+classesRouter.get('/', connectionsController.index);
 classesRouter.post('/', connectionsController.create);
 
 export default classesRouter;
