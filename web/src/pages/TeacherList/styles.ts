@@ -22,12 +22,39 @@ export const SearchTeachers = styled.form`
     margin-top: 0;
   }
 
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 5.6rem;
+
+    margin-top: 3.2rem;
+    border: 0;
+    border-radius: 0.8rem;
+
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+
+    text-decoration: none;
+    font: 700 1.6rem Archivo;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: var(--color-secondary-dark);
+    }
+  }
+
   @media(min-width: 700px) {
     position: absolute;
     bottom: -28px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
   }
 `;

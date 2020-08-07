@@ -8,28 +8,38 @@ import {
   ItemFooter
 } from './styles';
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+  id: number,
+  subject: string,
+  cost: number,
+  name: string,
+  avatar: string,
+  whatsapp: string,
+  bio: string
+}
+
+interface TeacherItemProps {
+  teacher: Teacher,
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   return (
     <Container>
       <ItemHeader>
-        <img src="https://avatars2.githubusercontent.com/u/54240849?s=460&u=1726068c37491bf0147a99458ac086305b706f81&v=4" alt="Eduardo SO"/>
+        <img src={teacher.avatar} alt={teacher.name}/>
 
         <div>
-          <strong>Eduardo SO</strong>
-          <span>Física</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </ItemHeader>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, cum!
-        <br /> <br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos amet placeat excepturi deserunt doloribus, saepe suscipit nam nobis quas recusandae labore ad maiores facere perferendis itaque ratione neque ex iure.
-      </p>
+      <p>{teacher.bio}</p>
 
       <ItemFooter>
         <p>
           Preço/hora
-          <strong>R$ 80,00</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
         <button type="button">
           <img src={whatsappIcon} alt="Whatsapp"/>
