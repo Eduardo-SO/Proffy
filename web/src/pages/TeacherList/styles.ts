@@ -17,6 +17,11 @@ export const SearchTeachers = styled.form`
     color: var(--color-text-in-primary);
   }
 
+  .input-block + .input-block,
+  .select-block + .select-block {
+    margin-top: 0;
+  }
+
   @media(min-width: 700px) {
     position: absolute;
     bottom: -28px;
