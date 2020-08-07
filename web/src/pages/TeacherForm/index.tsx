@@ -1,4 +1,5 @@
 import React, { useState, useCallback, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -28,6 +29,8 @@ const TeacherForm: React.FC = () => {
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: 0, from: '', to: '' }
   ]);
+
+  const history = useHistory();
 
   const addNewScheduleItem = useCallback(() => {
     setScheduleItems([
@@ -65,10 +68,12 @@ const TeacherForm: React.FC = () => {
       schedule: scheduleItems,
     }).then(response => {
       alert('Cadastro realizado com sucesso')
+
+      history.push('/');
     }).catch(() => {
       alert('Erro no cadastro!')
     })
-  }, [name, avatar, whatsapp, bio, subject, cost, scheduleItems]);
+  }, [name, avatar, whatsapp, bio, subject, cost, scheduleItems, history]);
 
   return (
     <Container>
