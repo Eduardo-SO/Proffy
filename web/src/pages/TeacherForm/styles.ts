@@ -42,7 +42,8 @@ export const Content = styled.main`
       font: 700 2.4rem Archivo;
     }
 
-    .input-block + .textarea-block {
+    .input-block + .textarea-block,
+    .select-block + .input-block {
       margin-top: 2.4rem;
     }
   }
