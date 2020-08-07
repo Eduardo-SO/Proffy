@@ -19,10 +19,11 @@ export const Title = styled.Text`
 
   color: #fff;
 
-  font-size: 2e0px;
+  font-family: 'Poppins_400Regular';
+  font-size: 20px;
   line-height: 30px;
 `;
 
 export const TitleBold = styled.Text`
-  font-weight: bold;
+  font-family: 'Poppins_600SemiBold';
 `;
