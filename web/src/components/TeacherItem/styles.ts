@@ -70,7 +70,7 @@ export const ItemFooter = styled.footer`
     }
   }
 
-  button {
+  a {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -83,6 +83,7 @@ export const ItemFooter = styled.footer`
     background: var(--color-secondary);
     color: var(--color-button-text);
 
+    text-decoration: none;
     font: 700 1.4rem Archivo;
     cursor: pointer;
 
