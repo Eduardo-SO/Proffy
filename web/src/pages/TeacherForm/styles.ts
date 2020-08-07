@@ -40,6 +40,21 @@ export const Content = styled.main`
       color: var(--color-text-title);
 
       font: 700 2.4rem Archivo;
+
+      button {
+        background: none;
+        border: 0;
+        color: var(--color-primary);
+
+        font: 700 1.6rem Archivo;
+        cursor: pointer;
+
+        transition: color .2s;
+
+        :hover {
+          color: var(--color-primary-dark);
+        }
+      }
     }
 
     .input-block + .textarea-block,
@@ -108,4 +123,14 @@ export const Footer = styled.footer`
     }
   }
   
+`
+
+export const ScheduleItem = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 1.6rem;
+
+  .input-block {
+    margin-top: 0 !important;
+  }
 `
