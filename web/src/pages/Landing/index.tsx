@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import api from '../../services/api';
 
 import { 
   PageLanding, 
@@ -19,6 +21,16 @@ import giveClassesIcon from '../../images/icons/give-classes.svg';
 import purpleHeartIcon from '../../images/icons/purple-heart.svg';
 
 const Landing: React.FC = () => {
+  const [totalConnections, setTotalConnections] = useState(0);
+
+  useEffect(() => {
+    api.get('connections').then(response => {
+      const { total } = response.data;
+      
+      setTotalConnections(total);
+    })
+  }, []);
+
   return (
     <PageLanding>
       <PageLandingContent>
@@ -42,7 +54,7 @@ const Landing: React.FC = () => {
         </ButtonsContainer>
 
         <TotalConnections>
-          Total de 200 conexões já realizadas
+          Total de {totalConnections} conexões já realizadas
           <img src={purpleHeartIcon} alt="Coração roxo"/>
         </TotalConnections>
       </PageLandingContent>
