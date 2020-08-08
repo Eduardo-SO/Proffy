@@ -41,7 +41,7 @@ const Landing: React.FC = () => {
       </ButtonsContainer>
 
       <TotalConnections>
-        Total de 369 conexões ╰(*°▽°*)╯ {' '}
+        Total de 369 conexões realizadas {' '}
         <Image source={heartIcon} />
       </TotalConnections>
     </Container>
