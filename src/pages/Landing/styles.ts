@@ -48,8 +48,7 @@ export const Button = styled.TouchableOpacity`
   padding: 24px;
   border-radius: 0;
 
-  background: ${(props: ButtonProps) => props.primary ? '#9871f5' : '#04d361'}
-
+  background: ${(props: ButtonProps) => props.primary ? '#9871f5' : '#04d361'};
 `;
 
 export const ButtonText = styled.Text`
@@ -57,4 +56,15 @@ export const ButtonText = styled.Text`
 
   font-family: 'Archivo_700Bold';
   font-size: 20px;
+`;
+
+export const TotalConnections = styled.Text`
+  max-width: 140px;
+  margin-top: 40px;
+  
+  color: #d4c2ff;
+  
+  font-family: 'Poppins_400Regular';
+  font-size: 12px;
+  line-height: 20px;
 `;
