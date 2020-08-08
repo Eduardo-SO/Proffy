@@ -41,8 +41,8 @@ const StudyTabs: React.FC = () => {
         component={TeacherList}
         options={{
           tabBarLabel: 'Proffys',
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="book-open" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Feather name="book-open" size={size} color={focused ? '#8257e5' : color} />
           )
         }}
       />
@@ -51,8 +51,8 @@ const StudyTabs: React.FC = () => {
         component={Favorites}
         options={{
           tabBarLabel: 'Favoritos',
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="heart" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Feather name="heart" size={size} color={focused ? '#8257e5' : color} />
           )
         }}
       />
