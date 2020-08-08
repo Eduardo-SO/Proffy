@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler'
 
 interface ButtonProps {
   primary?: boolean;
@@ -39,7 +40,7 @@ export const ButtonsContainer = styled.View`
   margin-top: 40px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(RectButton)`
   justify-content: space-between;
 
   height: 150px;
