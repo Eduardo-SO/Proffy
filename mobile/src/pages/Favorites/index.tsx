@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PageHeader from '../../components/PageHeader';
+
 import { 
   Container, 
   Title,
@@ -8,6 +10,8 @@ import {
 const Favorites: React.FC = () => {
   return (
     <Container>
+      <PageHeader title="Meus Proffys favoritos" />
+
       <Title>
         Favorites
       </Title>
