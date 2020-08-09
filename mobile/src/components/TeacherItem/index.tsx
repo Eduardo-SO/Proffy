@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Image } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { Image, Linking } from 'react-native';
 
 import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 import unfavoriteIcon from '../../assets/images/icons/unfavorite.png';
@@ -39,6 +39,10 @@ interface TeacherItemProps {
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   const [isFavorited, setIsFavorited] = useState(false);
 
+  const handleLinkToWhatsapp = useCallback(() => {
+    Linking.openURL(`whatsapp://send?phone=${teacher.whatsapp}`)
+  }, []);
+
   return (
     <Container>
       <Profile>
@@ -70,7 +74,9 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
 
           <ContactButton>
             <Image source={whatsappIcon} />
-            <ContactButtonText>Entrar em contato</ContactButtonText>
+            <ContactButtonText onPress={handleLinkToWhatsapp}>
+              Entrar em contato
+            </ContactButtonText>
           </ContactButton>
         </ButtonsContainer>
       </Footer>
