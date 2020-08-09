@@ -16,5 +16,5 @@ export const Title = styled.Text`
 `;
 
 export const StyledTeacherList = styled(ScrollView)`
-  margin-top: -60px;
+  margin-top: -40px;
 `;
