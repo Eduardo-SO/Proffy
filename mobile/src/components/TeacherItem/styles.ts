@@ -95,11 +95,12 @@ export const Bio = styled.Text`
   margin-right: 8px;
   border-radius: 8px;
 
-  background-color: ${(props: FavoriteProps) => props.favorited ? '#e33d3d' : '#8257e5'}
+  background-color: ${(props: FavoriteProps) => props.favorited ? '#e33d3d' : '#8257e5'};
  `;
 
  export const ContactButton = styled(RectButton)`
   flex: 1;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
