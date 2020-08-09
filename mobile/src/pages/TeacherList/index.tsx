@@ -4,7 +4,8 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 
 import { 
-  Container, 
+  Container,
+  StyledTeacherList
 } from './styles';
 
 const TeacherList: React.FC = () => {
@@ -12,7 +13,17 @@ const TeacherList: React.FC = () => {
     <Container>
       <PageHeader title="Proffys disponíveis" />
 
-      <TeacherItem />
+      <StyledTeacherList
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+          paddingBottom: 16,
+        }}
+      >
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+      </StyledTeacherList>
     </Container>
   );
 }
