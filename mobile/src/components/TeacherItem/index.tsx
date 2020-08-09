@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image } from 'react-native';
 
 import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
@@ -23,6 +23,8 @@ import {
 } from './styles';
 
 const TeacherItem: React.FC = () => {
+  const [isFavorited, setIsFavorited] = useState(false);
+
   return (
     <Container>
       <Profile>
@@ -49,8 +51,12 @@ const TeacherItem: React.FC = () => {
         </Price>
 
         <ButtonsContainer>
-          <FavoriteButton>
-            <Image source={heartOutlineIcon} />
+          <FavoriteButton favorited={isFavorited}>
+            {isFavorited ? (
+              <Image source={unfavoriteIcon} />
+            ) : (
+              <Image source={heartOutlineIcon} />
+            )}
           </FavoriteButton>
 
           <ContactButton>

@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
+interface FavoriteProps {
+  favorited?: boolean;
+}
+
 export const Container = styled.View`
   overflow: hidden;
 
@@ -56,32 +60,32 @@ export const Bio = styled.Text`
 `;
 
 
- export const  Footer = styled.View`
+ export const Footer = styled.View`
   align-items: center;
   margin-top: 24px;
   padding: 24px;
   background-color: #fafafc;
  `;
 
- export const  Price = styled.Text`
+ export const Price = styled.Text`
   color: #6a6186;
   font-family: 'Poppins_400Regular';
   font-size: 14px;
  `;
 
- export const  PriceValue = styled.Text`
+ export const PriceValue = styled.Text`
   color: #6a6186;
 
   font-family: 'Archivo_700Bold';
   font-size: 16px;
  `;
 
- export const  ButtonsContainer = styled.View`
+ export const ButtonsContainer = styled.View`
   flex-direction: row;
   margin-top: 16px;
  `;
 
- export const  FavoriteButton = styled(RectButton)`
+ export const FavoriteButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
 
@@ -91,10 +95,10 @@ export const Bio = styled.Text`
   margin-right: 8px;
   border-radius: 8px;
 
-  background-color: #8257e5;
+  background-color: ${(props: FavoriteProps) => props.favorited ? '#e33d3d' : '#8257e5'}
  `;
 
- export const  ContactButton = styled(RectButton)`
+ export const ContactButton = styled(RectButton)`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -108,7 +112,7 @@ export const Bio = styled.Text`
   background-color: #04d361;
  `;
 
- export const  ContactButtonText = styled.Text`
+ export const ContactButtonText = styled.Text`
   color: #fff;
   
   margin-left: 16px;
