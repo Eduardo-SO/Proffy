@@ -43,7 +43,7 @@ const Landing: React.FC = () => {
 
   return (
     <Container>
-      <Banner source={landingImage} />
+      <Banner source={landingImage} resizeMode="contain" />
       <Title>
         Seja bem-vindo! {'\n'}
         <TitleBold>O que deseja fazer?</TitleBold>

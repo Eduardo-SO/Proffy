@@ -16,7 +16,6 @@ export const Container = styled.View`
 
 export const Banner = styled.Image`
   width: 100%;
-  resize-mode: contain;
 `;
 
 export const Title = styled.Text`
