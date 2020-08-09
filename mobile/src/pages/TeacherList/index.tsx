@@ -1,10 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import { BorderlessButton } from 'react-native-gesture-handler';
-
 import { Feather } from '@expo/vector-icons';
 
+import api from '../../services/api';
+
 import PageHeader from '../../components/PageHeader';
-import TeacherItem from '../../components/TeacherItem';
+import TeacherItem, { Teacher } from '../../components/TeacherItem';
 
 import { 
   Container,
@@ -21,9 +22,27 @@ import {
 const TeacherList: React.FC = () => {
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
+  const [teachers, setTeachers] = useState([]);
+  const [subject, setSubject] = useState('');
+  const [weekDay, setWeekDay] = useState('');
+  const [time, setTime] = useState('');
+
   const handleToggleFiltersVisible = useCallback(() => {
     setIsFiltersVisible(!isFiltersVisible);
   }, [isFiltersVisible]);
+
+  const handleFiltersSubmit = useCallback(async () => {
+    const response = await api.get('classes', {
+      params: {
+        subject,
+        week_day: weekDay,
+        time
+      }
+    });
+
+    setIsFiltersVisible(false);
+    setTeachers(response.data);
+  }, [subject, weekDay, time]);
 
   return (
     <Container>
@@ -38,6 +57,8 @@ const TeacherList: React.FC = () => {
             <Input 
               placeholder="Qual a matéria?"
               placeholderTextColor="#c1bccc"
+              value={subject}
+              onChangeText={text => setSubject(text)}
             />
 
             <InputGroup>
@@ -46,6 +67,8 @@ const TeacherList: React.FC = () => {
                 <Input 
                   placeholder="Qual o dia?"
                   placeholderTextColor="#c1bccc"
+                  value={weekDay}
+                  onChangeText={text => setWeekDay(text)}
                 />
               </InputBlock>
 
@@ -54,12 +77,16 @@ const TeacherList: React.FC = () => {
                 <Input 
                   placeholder="Qual horário?"
                   placeholderTextColor="#c1bccc"
+                  value={time}
+                  onChangeText={text => setTime(text)}
                 />
               </InputBlock>
             </InputGroup>
 
-            <SubmitButton>
-              <SubmitButtonText>Filtrar</SubmitButtonText>
+            <SubmitButton onPress={handleFiltersSubmit}>
+              <SubmitButtonText>
+                Filtrar
+              </SubmitButtonText>
             </SubmitButton>
           </SearchForm>
         )}
@@ -71,10 +98,9 @@ const TeacherList: React.FC = () => {
           paddingBottom: 16,
         }}
       >
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher: Teacher) => (
+          <TeacherItem key={teacher.id} teacher={teacher} />
+        ))}
       </StyledTeacherList>
     </Container>
   );
