@@ -48,7 +48,7 @@ const TeacherList: React.FC = () => {
 
   const handleFiltersSubmit = useCallback(async () => {
     loadFavorites();
-
+    
     const response = await api.get('classes', {
       params: {
         subject,
