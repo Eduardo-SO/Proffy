@@ -1,10 +1,11 @@
 import React from 'react';
 
 import PageHeader from '../../components/PageHeader';
+import TeacherItem from '../../components/TeacherItem';
 
 import { 
-  Container, 
-  Title,
+  Container,
+  StyledTeacherList
 } from './styles';
 
 const Favorites: React.FC = () => {
@@ -12,9 +13,17 @@ const Favorites: React.FC = () => {
     <Container>
       <PageHeader title="Meus Proffys favoritos" />
 
-      <Title>
-        Favorites
-      </Title>
+      <StyledTeacherList
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+          paddingBottom: 16,
+        }}
+      >
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+      </StyledTeacherList>
     </Container>
   );
 }
