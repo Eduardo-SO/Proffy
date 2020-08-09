@@ -11,6 +11,12 @@ export const TopBar = styled.View`
   justify-content: space-between;
 `;
 
+export const Header = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`
+
 export const Title = styled.Text`
   max-width: 160px;
   margin: 40px 0;

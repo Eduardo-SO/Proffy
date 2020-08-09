@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { ScrollView } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1;
@@ -20,7 +21,7 @@ export const StyledTeacherList = styled(ScrollView)`
 `;
 
 export const SearchForm = styled.View`
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 `
 
 export const Label = styled.Text`
@@ -46,4 +47,20 @@ export const InputGroup = styled.View`
 
 export const InputBlock = styled.View`
   width: 48%;
+`
+
+export const SubmitButton = styled(RectButton)`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 56px;
+  border-radius: 8px;
+  background-color: #04d361;
+`
+
+export const SubmitButtonText = styled.Text`
+  color: #fff;
+  font-family: 'Archivo_700Bold';
+  font-size: 16px;
 `
