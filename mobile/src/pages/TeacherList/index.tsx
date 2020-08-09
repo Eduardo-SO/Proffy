@@ -1,10 +1,10 @@
 import React from 'react';
 
 import PageHeader from '../../components/PageHeader';
+import TeacherItem from '../../components/TeacherItem';
 
 import { 
   Container, 
-  Title,
 } from './styles';
 
 const TeacherList: React.FC = () => {
@@ -12,9 +12,7 @@ const TeacherList: React.FC = () => {
     <Container>
       <PageHeader title="Proffys disponíveis" />
 
-      <Title>
-        Teacher list
-      </Title>
+      <TeacherItem />
     </Container>
   );
 }
