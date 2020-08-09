@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Feather } from '@expo/vector-icons';
@@ -40,7 +40,7 @@ const TeacherList: React.FC = () => {
         setFavorites(favoritedTeachersIds);
       };
     });
-  }, [isFiltersVisible]);
+  }, []);
 
   const handleToggleFiltersVisible = useCallback(() => {
     setIsFiltersVisible(!isFiltersVisible);
@@ -48,7 +48,7 @@ const TeacherList: React.FC = () => {
 
   const handleFiltersSubmit = useCallback(async () => {
     loadFavorites();
-    
+
     const response = await api.get('classes', {
       params: {
         subject,
