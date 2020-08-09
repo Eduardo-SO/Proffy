@@ -17,7 +17,7 @@ interface Props {
   description?: string;
 }
 
-const PageHeader: React.FC<Props> = ({ title }) => {
+const PageHeader: React.FC<Props> = ({ children, title }) => {
   const { navigate } = useNavigation();
 
   const handleGoBack = useCallback(() => {
@@ -35,6 +35,8 @@ const PageHeader: React.FC<Props> = ({ title }) => {
         </TopBar>
 
         <Title>{title}</Title>
+
+        {children}
       </Container>
   );
 }
