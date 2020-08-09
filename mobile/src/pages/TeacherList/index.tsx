@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { BorderlessButton } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-community/async-storage';
 import { Feather } from '@expo/vector-icons';
 
 import api from '../../services/api';
@@ -20,6 +21,7 @@ import {
 } from './styles';
 
 const TeacherList: React.FC = () => {
+  const [favorites, setFavorites] = useState<number[]>([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
   const [teachers, setTeachers] = useState([]);
@@ -27,11 +29,26 @@ const TeacherList: React.FC = () => {
   const [weekDay, setWeekDay] = useState('');
   const [time, setTime] = useState('');
 
+  const loadFavorites = useCallback(() => {
+    AsyncStorage.getItem('favorites').then(response => {
+      if (response) {
+        const favoritedTeachers = JSON.parse(response);
+        const favoritedTeachersIds = favoritedTeachers.map((teacher: Teacher) => {
+          return teacher.id;
+        });
+
+        setFavorites(favoritedTeachersIds);
+      };
+    });
+  }, [isFiltersVisible]);
+
   const handleToggleFiltersVisible = useCallback(() => {
     setIsFiltersVisible(!isFiltersVisible);
   }, [isFiltersVisible]);
 
   const handleFiltersSubmit = useCallback(async () => {
+    loadFavorites();
+    
     const response = await api.get('classes', {
       params: {
         subject,
@@ -99,7 +116,11 @@ const TeacherList: React.FC = () => {
         }}
       >
         {teachers.map((teacher: Teacher) => (
-          <TeacherItem key={teacher.id} teacher={teacher} />
+          <TeacherItem
+            key={teacher.id}
+            teacher={teacher}
+            favorited={favorites.includes(teacher.id)}
+          />
         ))}
       </StyledTeacherList>
     </Container>
