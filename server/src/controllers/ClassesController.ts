@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { hash } from 'bcrypt';
 
 import db from '../database/connection';
 import convertHoursInMinutes from '../utils/convertHoursInMinutes';
@@ -53,14 +54,16 @@ export default class ClassesController {
       cost,
       schedule
     } = request.body;
-  
+
     const trx = await db.transaction();
-  
+    
     try {
+      const hashedPassword = await hash(password, 8);
+      
       const insertedUsersIds = await trx('users').insert({
         name,
         email,
-        password,
+        password: hashedPassword,
         avatar,
         whatsapp,
         bio,
