@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import { hash } from 'bcrypt';
 
+import User from '../models/User';
+
 import db from '../database/connection';
 import convertHoursInMinutes from '../utils/convertHoursInMinutes';
 
@@ -59,15 +61,17 @@ export default class ClassesController {
     
     try {
       const hashedPassword = await hash(password, 8);
-      
-      const insertedUsersIds = await trx('users').insert({
+
+      const user = new User(
         name,
         email,
-        password: hashedPassword,
+        hashedPassword,
         avatar,
         whatsapp,
         bio,
-      });
+      )
+      
+      const insertedUsersIds = await trx('users').insert(user);
     
       const user_id = insertedUsersIds[0];
     
