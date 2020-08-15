@@ -1,4 +1,4 @@
-class Schedule {
+class User {
   name: string;
 
   email: string;
@@ -28,4 +28,4 @@ class Schedule {
   }
 }
 
-export default Schedule;
+export default User;
