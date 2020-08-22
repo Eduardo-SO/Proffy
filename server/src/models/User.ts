@@ -1,31 +1,27 @@
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity('users')
 class User {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column()
   name: string;
 
+  @Column()
   email: string;
 
+  @Column()
   password: string;
 
+  @Column()
   avatar: string;
 
+  @Column()
   whatsapp: string;
 
+  @Column()
   bio: string;
-
-  constructor(
-    name: string,
-    email: string,
-    hashedPassword: string,
-    avatar: string,
-    whatsapp: string,
-    bio: string,
-  ) {
-    this.name = name;
-    this.email = email;
-    this.password = hashedPassword;
-    this.avatar = avatar;
-    this.whatsapp = whatsapp;
-    this.bio = bio;
-  }
 }
 
 export default User;
