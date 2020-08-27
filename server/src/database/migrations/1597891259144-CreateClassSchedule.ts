@@ -51,7 +51,7 @@ export default class CreateClassSchedule1597891259144
     );
 
     await queryRunner.createForeignKey(
-      'classes',
+      'class_schedule',
       new TableForeignKey({
         name: 'ClassScheduleClasses',
         columnNames: ['class_id'],
