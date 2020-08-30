@@ -8,7 +8,7 @@ import Textarea from '../../components/Textarea';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 
-import warningIcon from '../../images/icons/warning.svg';
+import warningIcon from '../../assets/images/icons/warning.svg';
 
 import { 
   Container,

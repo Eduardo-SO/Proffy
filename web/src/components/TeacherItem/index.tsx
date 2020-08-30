@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import api from '../../services/api';
 
-import whatsappIcon from '../../images/icons/whatsapp.svg';
+import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import {
   Container,
