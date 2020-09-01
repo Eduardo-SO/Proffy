@@ -57,11 +57,48 @@ export const FormSection = styled.section`
 `;
 
 export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 36rem;
 
   h1 {
     color: var(--color-text-title);
-    font: 700 3.6rem Archivo;
-    line-height: 4.2rem;
+    font-size: 3.6rem;
+    font-weight: 700;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 4rem;
+
+    input[type=text] {
+      height: 7.2rem;
+      width: 100%;
+
+      padding: 2.4rem;
+      border: 2px solid var(--color-line-in-white);
+
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+
+      &:nth-child(2) {
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      input::after {
+        background-color: red;
+      }
+    }
   }
 `;
 

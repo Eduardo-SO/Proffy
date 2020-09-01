@@ -32,10 +32,14 @@ const SignIn: React.FC = () => {
             <input type="text" placeholder="E-mail"/>
             <input type="text" placeholder="Senha"/>
 
-            <input type="checkbox" id="rememberPassword" />
-            <label htmlFor="rememberPassword">Lembrar-me</label>
+            <div>
+              <span>
+                <input type="checkbox" id="rememberPassword" />
+                <label htmlFor="rememberPassword">Lembrar-me</label>
+              </span>
 
-            <Link to="/">Esqueci minha senha</Link>
+              <Link to="/">Esqueci minha senha</Link>
+            </div>
 
             <button type="submit">Entrar</button>
           </form>
