@@ -35,7 +35,7 @@ export const Content = styled.main`
       margin-bottom: 2.4rem;
       padding-bottom: 1.6rem;
 
-      border-bottom: 1px solidvar(--color-line-in-white);
+      border-bottom: 1px solid var(--color-line-in-white);
 
       color: var(--color-text-title);
 
