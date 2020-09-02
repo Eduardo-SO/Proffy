@@ -25,6 +25,7 @@ const SignIn: React.FC = () => {
         </LogoContainer>
       </LogoSection>
       <FormSection>
+        <span></span>
         <FormContainer>
           <h1>Fazer login</h1>
 

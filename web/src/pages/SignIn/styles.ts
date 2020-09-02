@@ -48,7 +48,7 @@ export const FormSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   
   width: 50vw;
   height: 100%;
@@ -95,9 +95,24 @@ export const FormContainer = styled.div`
       display: flex;
       justify-content: space-between;
 
-      input::after {
-        background-color: red;
+      span {
+        color: var(--color-text-complement);
       }
+
+      a {
+        color: var(--color-text-complement);
+        text-decoration: none;
+      }
+    }
+
+    button {
+      height: 5.6rem;
+
+      margin-top: 4rem;
+      border: none;
+
+      background-color: #DCDCE5;
+
     }
   }
 `;
@@ -113,8 +128,16 @@ export const Footer = styled.div`
 export const SignUpLink = styled.a`
   display: flex;
   flex-direction: column;
+  color: var(--color-primary);
+
+  a {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
 `;
 
 export const TotalConnections = styled.div`
-
+  img {
+    margin-left: .8rem;
+  }
 `;
