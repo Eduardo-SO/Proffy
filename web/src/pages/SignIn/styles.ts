@@ -110,9 +110,21 @@ export const FormContainer = styled.div`
 
       margin-top: 4rem;
       border: none;
+      border-radius: .8rem;
 
-      background-color: #DCDCE5;
+      background: #DCDCE5;
+      color: var(--color-text-complement);
 
+      font: 700 1.6rem Archivo;
+
+      transition: all .3s;
+
+      &:hover {
+        color: var(--color-button-text);
+        background: var(--color-secondary);
+
+        cursor: pointer;
+      }
     }
   }
 `;
