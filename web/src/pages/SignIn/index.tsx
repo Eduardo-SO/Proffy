@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 import logo from '../../assets/images/logo.svg'
 
+import Checkbox from '../../components/Checkbox';
+
 import { 
   Container,
   LogoSection,
@@ -34,10 +36,7 @@ const SignIn: React.FC = () => {
             <input type="text" placeholder="Senha"/>
 
             <div>
-              <span>
-                <input type="checkbox" id="rememberPassword" />
-                <label htmlFor="rememberPassword">Lembrar-me</label>
-              </span>
+              <Checkbox />
 
               <Link to="/">Esqueci minha senha</Link>
             </div>

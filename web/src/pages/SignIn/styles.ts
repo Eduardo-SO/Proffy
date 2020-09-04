@@ -86,6 +86,8 @@ export const FormContainer = styled.div`
       }
 
       &:nth-child(2) {
+        margin-bottom: 2.4rem;
+
         border-top: none;
         border-radius: 0 0 8px 8px;
       }
@@ -94,10 +96,6 @@ export const FormContainer = styled.div`
     div {
       display: flex;
       justify-content: space-between;
-
-      span {
-        color: var(--color-text-complement);
-      }
 
       a {
         color: var(--color-text-complement);
