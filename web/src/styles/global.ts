@@ -32,6 +32,10 @@ export default createGlobalStyle`
   outline: 0;
 
   box-sizing: border-box;
+
+  ::selection {
+    background: var(--color-secondary); /* WebKit/Blink Browsers */
+  }
 }
 
 html, body, #root {
