@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   color: var(--color-text-complement);
 
+  label {
+    cursor: pointer;
+  }
+
   #checkmark {
     position: relative;
     overflow: hidden;
