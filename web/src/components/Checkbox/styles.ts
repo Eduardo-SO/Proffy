@@ -16,10 +16,9 @@ export const Container = styled.div`
     margin-right: 1.6rem;
     border-radius: 8px;
 
-    border: 2px solid var(--color-text-complement);
     background-color: var(--color-box-base);
 
-    transition: all .6s;
+    transition: background-color .6s;
 
     &::after {
       content: '';
@@ -39,7 +38,6 @@ export const Container = styled.div`
 
   #check:checked ~ #checkmark {
     background-color: var(--color-secondary);
-    border: 2px solid var(--color-secondary);
 
     &::after {
       transform: rotateZ(40deg) scale(1);

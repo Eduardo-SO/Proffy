@@ -2,22 +2,24 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 :root {
-  --color-background: #F0F0F7;
-  --color-primary-lighter: #9871F5;
-  --color-primary-light: #916BEA;
-  --color-primary: #8257E5;
-  --color-primary-dark: #774DD6;
-  --color-primary-darker: #6842C2;
-  --color-secondary: #04D361;
-  --color-secondary-dark: #04BF58;
-  --color-title-in-primary: #FFFFFF;
-  --color-text-in-primary: #D4C2FF;
-  --color-text-title: #32264D;
-  --color-text-complement: #9C98A6;
-  --color-text-base: #6A6180;
-  --color-line-in-white: #E6E6F0;
-  --color-input-background: #F8F8FC;
-  --color-button-text: #FFFFFF;
+  --color-background: #222222;
+  --color-primary-lighter: #444444;
+  --color-primary-light: #333333;
+  --color-primary: #111111;
+  --color-primary-dark: #0f0f0f;
+  --color-primary-darker: #000000;
+  --color-secondary: #E3B505;
+  --color-secondary-dark: #B18E07;
+  --color-secondary-darker: #634E00;
+  --color-title-in-primary: #EEEEEE;
+  --color-text-in-primary: #D6CBA1;
+  --color-text-title: #EEEEEE;
+  --color-text-complement: #FFFBED;
+  --color-text-base: #EEEEEE;
+  --color-line-in-white: #E3B50535;
+  --color-input-background: #111111;
+  --color-button-text: #222;
+  --color-disabled: #D8D6D025;
   --color-box-base: #FFFFFF;
   --color-box-footer: #FAFAFC;
 
@@ -51,7 +53,7 @@ input,
 button,
 textarea {
   font: 500 1.6rem Poppins;
-  color: var(--color-text-base);
+  color: var(--color-text-in-primary);
 }
 
 @media (min-width: 700px) {

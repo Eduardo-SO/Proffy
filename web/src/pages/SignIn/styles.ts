@@ -53,7 +53,7 @@ export const FormSection = styled.section`
   width: 50vw;
   height: 100%;
 
-  background-color: var(--color-box-footer);
+  background-color: var(--color-background);
 `;
 
 export const FormContainer = styled.div`
@@ -80,6 +80,12 @@ export const FormContainer = styled.div`
 
       padding: 2.4rem;
       border: 2px solid var(--color-line-in-white);
+
+      background: var(--color-input-background);
+
+      &::placeholder {
+        color: var(--color-text-base);
+      }
 
       &:first-child {
         border-radius: 8px 8px 0 0;
@@ -110,7 +116,7 @@ export const FormContainer = styled.div`
       border: none;
       border-radius: .8rem;
 
-      background: #DCDCE5;
+      background: var(--color-disabled);
       color: var(--color-text-complement);
 
       font: 700 1.6rem Archivo;
@@ -138,15 +144,17 @@ export const Footer = styled.div`
 export const SignUpLink = styled.a`
   display: flex;
   flex-direction: column;
-  color: var(--color-primary);
+  color: var(--color-text-complement);
 
   a {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-weight: 700;
   }
 `;
 
 export const TotalConnections = styled.div`
+  color: var(--color-text-complement);
+  
   img {
     margin-left: .8rem;
   }

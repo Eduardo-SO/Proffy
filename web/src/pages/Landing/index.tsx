@@ -18,7 +18,7 @@ import landingImg from '../../assets/images/landing.svg';
 
 import studyIcon from '../../assets/images/icons/study.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
-import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
+import HeartIcon from '../../assets/images/icons/heart.svg';
 
 const Landing: React.FC = () => {
   const [totalConnections, setTotalConnections] = useState(0);
@@ -55,7 +55,7 @@ const Landing: React.FC = () => {
 
         <TotalConnections>
           Total de {totalConnections} conexões já realizadas
-          <img src={purpleHeartIcon} alt="Coração roxo"/>
+          <img src={HeartIcon} alt="Coração roxo"/>
         </TotalConnections>
       </PageLandingContent>
     </PageLanding>

@@ -19,7 +19,7 @@ export const Content = styled.main`
   padding-top: 6.4rem;
   border-radius: 0.8rem;
 
-  background: var(--color-box-base);
+  background: var(--color-primary-light);
 
   fieldset {
     border: 0;

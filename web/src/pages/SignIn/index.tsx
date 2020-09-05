@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
+import HeartIcon from '../../assets/images/icons/heart.svg';
 import logo from '../../assets/images/logo.svg'
 
 import Checkbox from '../../components/Checkbox';
@@ -52,7 +52,7 @@ const SignIn: React.FC = () => {
 
           <TotalConnections>
             É de graça
-            <img src={purpleHeartIcon} alt="Coração roxo"/>
+            <img src={HeartIcon} alt="Coração roxo"/>
           </TotalConnections>
         </Footer>
       </FormSection>

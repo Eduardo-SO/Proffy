@@ -7,7 +7,7 @@ const Checkbox: React.FC = () => {
     <Container>
       <input type="checkbox" id="check" hidden/>
       <label htmlFor="check" id="checkmark"/>
-      <label htmlFor="check" id="text">Lembrar-me</label>
+      <label htmlFor="check">Lembrar-me</label>
     </Container>
   );
 }
