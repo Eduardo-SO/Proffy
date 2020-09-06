@@ -13,7 +13,7 @@ import {
   SignInLink,
 } from './styles';
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   return (
     <Container>
       <FormSection>
@@ -49,4 +49,4 @@ const SignIn: React.FC = () => {
   );
 }
 
-export default SignIn;
+export default SignUp;
