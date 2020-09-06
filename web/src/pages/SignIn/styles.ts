@@ -14,7 +14,7 @@ export const LogoSection = styled.section`
   justify-content: center;
   align-items: center;
 
-  width: 50vw;
+  width: 60vw;
   height: 100%;
 
   color: var(--color-text-in-primary);
@@ -50,7 +50,7 @@ export const FormSection = styled.section`
   align-items: center;
   justify-content: space-evenly;
   
-  width: 50vw;
+  width: 40vw;
   height: 100%;
 
   background-color: var(--color-background);
