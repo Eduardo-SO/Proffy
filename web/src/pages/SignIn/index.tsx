@@ -38,7 +38,7 @@ const SignIn: React.FC = () => {
             <div>
               <Checkbox />
 
-              <Link to="/">Esqueci minha senha</Link>
+              <Link to="/forgot-password">Esqueci minha senha</Link>
             </div>
 
             <button type="submit">Entrar</button>
