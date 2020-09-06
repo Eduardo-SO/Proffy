@@ -68,6 +68,10 @@ export const FormContainer = styled.div`
     font-weight: 700;
   }
 
+  p {
+    width: 22rem;
+  }
+
   form {
     display: flex;
     flex-direction: column;
