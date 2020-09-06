@@ -74,7 +74,7 @@ export const FormContainer = styled.div`
 
     margin-top: 4rem;
 
-    input[type=text] {
+    input {
       height: 7.2rem;
       width: 100%;
 

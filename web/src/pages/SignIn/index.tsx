@@ -32,8 +32,8 @@ const SignIn: React.FC = () => {
           <h1>Fazer login</h1>
 
           <form action="">
-            <input type="text" placeholder="E-mail"/>
-            <input type="text" placeholder="Senha"/>
+            <input type="email" placeholder="E-mail"/>
+            <input type="password" placeholder="Senha"/>
 
             <div>
               <Checkbox />
