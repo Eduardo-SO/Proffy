@@ -47,7 +47,7 @@ const SignIn: React.FC = () => {
         <Footer>
           <SignUpLink>
             <p>Não tem conta?</p>
-            <Link to="/">Cadastre-se</Link>
+            <Link to="signup">Cadastre-se</Link>
           </SignUpLink>
 
           <TotalConnections>
