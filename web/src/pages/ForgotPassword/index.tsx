@@ -23,7 +23,7 @@ const ForgotPassword: React.FC = () => {
           <p>Não esquenta, vamos dar um jeito nisso.</p>
 
           <form action="">
-            <input type="email" placeholder="E-mail"/>
+            <input type="email" required placeholder="E-mail"/>
 
             <button type="submit">Enviar</button>
           </form>

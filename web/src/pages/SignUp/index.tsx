@@ -24,10 +24,10 @@ const SignUp: React.FC = () => {
           <p>Preencha os dados abaixo para começar</p>
 
           <form action="">
-            <input type="text" placeholder="Nome"/>
-            <input type="text" placeholder="Sobrenome"/>
-            <input type="email" placeholder="E-mail"/>
-            <input type="password" placeholder="Senha"/>
+            <input type="text" required placeholder="Nome"/>
+            <input type="text" required placeholder="Sobrenome"/>
+            <input type="email" required placeholder="E-mail"/>
+            <input type="password" required placeholder="Senha"/>
 
             <button type="submit">Concluir cadastro</button>
           </form>
