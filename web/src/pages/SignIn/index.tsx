@@ -5,13 +5,15 @@ import HeartIcon from '../../assets/images/icons/heart.svg';
 import logo from '../../assets/images/logo.svg'
 
 import Checkbox from '../../components/Checkbox';
+import Input from '../../components/Input';
 
-import { 
+import {
   Container,
   LogoSection,
   LogoContainer,
   FormSection,
   FormContainer,
+  FormOptions,
   Footer,
   SignUpLink,
   TotalConnections 
@@ -32,14 +34,14 @@ const SignIn: React.FC = () => {
           <h1>Fazer login</h1>
 
           <form action="">
-            <input type="email" required placeholder="E-mail"/>
-            <input type="password" required placeholder="Senha"/>
+            <Input type="email" name="email" label="E-mail" required/>
+            <Input type="password" name="password" label="Senha" required/>
 
-            <div>
+            <FormOptions>
               <Checkbox />
 
               <Link to="/forgot-password">Esqueci minha senha</Link>
-            </div>
+            </FormOptions>
 
             <button type="submit">Entrar</button>
           </form>

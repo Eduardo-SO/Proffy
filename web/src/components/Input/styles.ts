@@ -1,7 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
+
+  height: 5.6rem;
+  padding: 0 1.6rem;
+  margin-top: .8rem;
+  border-radius: .8rem;
+
+  background: var(--color-input-background);
+  border: 1px solid var(--color-line-in-white);
 
   & + & {
     margin-top: 1.4rem;
@@ -12,15 +23,12 @@ export const Container = styled.div`
   }
 
   input {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: 5.6rem;
 
-    margin-top: .8rem;
-    padding: 0 1.6rem;
-    border-radius: .8rem;
-
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
+    background: none;
+    border: none;
 
     font: 1.6rem Archivo;
   }
@@ -36,12 +44,10 @@ export const Container = styled.div`
     width: calc(100% - 3.2rem);
     height: 2px;
     
-    background: var(--color-primary-light);
-  }
+    background: var(--color-secondary);
 
-  @media(min-width: 700px) {
-    & + div {
-      margin-top: 0rem;
+    label {
+      font-size: 30px;
     }
   }
 `;

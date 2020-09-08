@@ -74,41 +74,6 @@ export const FormContainer = styled.div`
 
     margin-top: 4rem;
 
-    input {
-      height: 7.2rem;
-      width: 100%;
-
-      padding: 2.4rem;
-      border: 2px solid var(--color-line-in-white);
-
-      background: var(--color-input-background);
-
-      &::placeholder {
-        color: var(--color-text-base);
-      }
-
-      &:first-child {
-        border-radius: 8px 8px 0 0;
-      }
-
-      &:nth-child(2) {
-        margin-bottom: 2.4rem;
-
-        border-top: none;
-        border-radius: 0 0 8px 8px;
-      }
-    }
-
-    div {
-      display: flex;
-      justify-content: space-between;
-
-      a {
-        color: var(--color-text-complement);
-        text-decoration: none;
-      }
-    }
-
     button {
       height: 5.6rem;
 
@@ -132,6 +97,18 @@ export const FormContainer = styled.div`
     }
   }
 `;
+
+export const FormOptions = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 2.4rem;
+
+  a {
+    color: var(--color-text-complement);
+    text-decoration: none;
+  }
+`
 
 export const Footer = styled.div`
   display: flex;
