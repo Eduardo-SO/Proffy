@@ -6,27 +6,25 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
 
-  height: 5.6rem;
-  padding: 0 1.6rem;
+  width: 100%;
+  height: 7.2rem;
+  padding: 1.4rem 1.6rem;
   margin-top: .8rem;
   border-radius: .8rem;
 
   background: var(--color-input-background);
   border: 1px solid var(--color-line-in-white);
 
-  & + & {
-    margin-top: 1.4rem;
-  }
-
   label {
-    font-size: 1.4rem;
+    position: absolute;
+
+    width: 100%;
+
+    pointer-events: none;
+    transition: all .4s ease; 
   }
 
   input {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-
     background: none;
     border: none;
 
@@ -45,9 +43,17 @@ export const Container = styled.div`
     height: 2px;
     
     background: var(--color-secondary);
+  }
 
+  &:focus-within {
     label {
-      font-size: 30px;
+      font-size: 1.2rem; 
+
+      transform: translateY(-1rem);
+    }
+
+    input {
+      transform: translateY(1rem);
     }
   }
 `;
