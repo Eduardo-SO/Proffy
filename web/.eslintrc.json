@@ -41,7 +41,17 @@
         "tsx": "never"
       }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-use-before-define": "off",
+    "react/jsx-curly-newline": "off",
+    "jsx-a11y/label-has-for": [ 2, {
+      "required": {
+          "every": [ "id" ]
+      }
+    }],
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {

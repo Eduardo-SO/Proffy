@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 import HeartIcon from '../../assets/images/icons/heart.svg';
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.svg';
 
 import Checkbox from '../../components/Checkbox';
 import Input from '../../components/Input';
@@ -16,7 +17,7 @@ import {
   FormOptions,
   Footer,
   SignUpLink,
-  TotalConnections 
+  TotalConnections,
 } from './styles';
 
 const SignIn: React.FC = () => {
@@ -24,18 +25,22 @@ const SignIn: React.FC = () => {
     <Container>
       <LogoSection>
         <LogoContainer>
-          <img src={logo} alt="Proffy"/>
+          <img src={logo} alt="Proffy" />
+
           <h2>Sua plataforma de estudos online</h2>
         </LogoContainer>
       </LogoSection>
+
       <FormSection>
-        <span></span>
+        <span />
+
         <FormContainer>
           <h1>Fazer login</h1>
 
           <form action="">
-            <Input type="email" name="email" label="E-mail" required/>
-            <Input type="password" name="password" label="Senha" required/>
+            <Input type="email" name="email" label="E-mail" required />
+
+            <Input type="password" name="password" label="Senha" required />
 
             <FormOptions>
               <Checkbox />
@@ -46,20 +51,22 @@ const SignIn: React.FC = () => {
             <button type="submit">Entrar</button>
           </form>
         </FormContainer>
+
         <Footer>
           <SignUpLink>
             <p>Não tem conta?</p>
+
             <Link to="signup">Cadastre-se</Link>
           </SignUpLink>
 
           <TotalConnections>
             É de graça
-            <img src={HeartIcon} alt="Coração roxo"/>
+            <img src={HeartIcon} alt="Coração roxo" />
           </TotalConnections>
         </Footer>
       </FormSection>
     </Container>
   );
-}
+};
 
 export default SignIn;

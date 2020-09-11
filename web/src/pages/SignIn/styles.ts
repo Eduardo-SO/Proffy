@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import background from '../../assets/images/background.svg';
 
 export const Container = styled.div`
@@ -31,7 +32,7 @@ export const LogoContainer = styled.div`
 
   h2 {
     margin-top: 0.8rem;
-    
+
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 4.6rem;
@@ -49,7 +50,7 @@ export const FormSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  
+
   width: 40vw;
   height: 100%;
 
@@ -79,14 +80,13 @@ export const FormContainer = styled.div`
 
       margin-top: 4rem;
       border: none;
-      border-radius: .8rem;
+      border-radius: 0.8rem;
 
       background: var(--color-disabled);
       color: var(--color-text-complement);
-
       font: 700 1.6rem Archivo;
 
-      transition: all .3s;
+      transition: all 0.3s;
 
       &:hover {
         color: var(--color-button-text);
@@ -108,7 +108,7 @@ export const FormOptions = styled.div`
     color: var(--color-text-complement);
     text-decoration: none;
   }
-`
+`;
 
 export const Footer = styled.div`
   display: flex;
@@ -121,6 +121,7 @@ export const Footer = styled.div`
 export const SignUpLink = styled.a`
   display: flex;
   flex-direction: column;
+
   color: var(--color-text-complement);
 
   a {
@@ -131,8 +132,8 @@ export const SignUpLink = styled.a`
 
 export const TotalConnections = styled.div`
   color: var(--color-text-complement);
-  
+
   img {
-    margin-left: .8rem;
+    margin-left: 0.8rem;
   }
 `;

@@ -9,8 +9,8 @@ export const Container = styled.div`
   width: 100%;
   height: 7.2rem;
   padding: 1.4rem 1.6rem;
-  margin-top: .8rem;
-  border-radius: .8rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
 
   background: var(--color-input-background);
   border: 1px solid var(--color-line-in-white);
@@ -21,7 +21,7 @@ export const Container = styled.div`
     width: 100%;
 
     pointer-events: none;
-    transition: all .4s ease; 
+    transition: all 0.4s ease;
   }
 
   input {
@@ -38,16 +38,16 @@ export const Container = styled.div`
     left: 1.6rem;
     right: 1.6rem;
     bottom: 0;
-    
+
     width: calc(100% - 3.2rem);
     height: 2px;
-    
+
     background: var(--color-secondary);
   }
 
   &:focus-within {
     label {
-      font-size: 1.2rem; 
+      font-size: 1.2rem;
 
       transform: translateY(-1rem);
     }

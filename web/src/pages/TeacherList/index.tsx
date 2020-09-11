@@ -7,11 +7,7 @@ import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 
-import { 
-  Container, 
-  SearchTeachers, 
-  Content
-} from './styles';
+import { Container, SearchTeachers, Content } from './styles';
 
 const TeacherList: React.FC = () => {
   const [teachers, setTeachers] = useState([]);
@@ -20,19 +16,22 @@ const TeacherList: React.FC = () => {
   const [weekDay, setWeekDay] = useState('');
   const [time, setTime] = useState('');
 
-  const searchTeachers = useCallback(async (e: FormEvent) => {
-    e.preventDefault();
-    
-    const response = await api.get('classes', {
-      params: {
-        subject,
-        week_day: weekDay,
-        time
-      }
-    });
+  const searchTeachers = useCallback(
+    async (e: FormEvent) => {
+      e.preventDefault();
 
-    setTeachers(response.data);
-  }, [subject, time, weekDay]);
+      const response = await api.get('classes', {
+        params: {
+          subject,
+          week_day: weekDay,
+          time,
+        },
+      });
+
+      setTeachers(response.data);
+    },
+    [subject, time, weekDay],
+  );
 
   return (
     <Container>
@@ -86,6 +85,6 @@ const TeacherList: React.FC = () => {
       </Content>
     </Container>
   );
-}
+};
 
 export default TeacherList;

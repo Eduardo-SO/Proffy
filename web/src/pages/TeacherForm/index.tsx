@@ -10,12 +10,7 @@ import Select from '../../components/Select';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 
-import { 
-  Container,
-  Content,
-  Footer,
-  ScheduleItem
- } from './styles';
+import { Container, Content, Footer, ScheduleItem } from './styles';
 
 const TeacherForm: React.FC = () => {
   const [name, setName] = useState('');
@@ -27,53 +22,55 @@ const TeacherForm: React.FC = () => {
   const [cost, setCost] = useState('');
 
   const [scheduleItems, setScheduleItems] = useState([
-    { week_day: 0, from: '', to: '' }
+    { week_day: 0, from: '', to: '' },
   ]);
 
   const history = useHistory();
 
   const addNewScheduleItem = useCallback(() => {
-    setScheduleItems([
-      ...scheduleItems,
-      { week_day: 0, from: '', to: '' }
-  ])
+    setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }]);
   }, [scheduleItems]);
 
-  const setScheduleItemValue = useCallback((
-    position: number,
-    field: string,
-    value: string
-  ) => {
-    const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
-      if (index === position) {
-        return { ...scheduleItem, [field]: value }
-      }
+  const setScheduleItemValue = useCallback(
+    (position: number, field: string, value: string) => {
+      const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
+        if (index === position) {
+          return { ...scheduleItem, [field]: value };
+        }
 
-      return scheduleItem;
-    });
+        return scheduleItem;
+      });
 
-    setScheduleItems(updatedScheduleItems);
-  }, [scheduleItems])
+      setScheduleItems(updatedScheduleItems);
+    },
+    [scheduleItems],
+  );
 
-  const handleCreateClass = useCallback((e: FormEvent) => {
-    e.preventDefault();
-    
-    api.post('classes', {
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost: Number(cost),
-      schedule: scheduleItems,
-    }).then(response => {
-      alert('Cadastro realizado com sucesso')
+  const handleCreateClass = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault();
 
-      history.push('/');
-    }).catch(() => {
-      alert('Erro no cadastro!')
-    })
-  }, [name, avatar, whatsapp, bio, subject, cost, scheduleItems, history]);
+      api
+        .post('classes', {
+          name,
+          avatar,
+          whatsapp,
+          bio,
+          subject,
+          cost: Number(cost),
+          schedule: scheduleItems,
+        })
+        .then(response => {
+          alert('Cadastro realizado com sucesso');
+
+          history.push('/');
+        })
+        .catch(() => {
+          alert('Erro no cadastro!');
+        });
+    },
+    [name, avatar, whatsapp, bio, subject, cost, scheduleItems, history],
+  );
 
   return (
     <Container>
@@ -91,7 +88,9 @@ const TeacherForm: React.FC = () => {
               label="Nome completo"
               type="text"
               value={name}
-              onChange={(e) => {setName(e.target.value)}}
+              onChange={e => {
+                setName(e.target.value);
+              }}
             />
 
             <Input
@@ -99,7 +98,9 @@ const TeacherForm: React.FC = () => {
               label="Avatar"
               type="text"
               value={avatar}
-              onChange={(e) => {setAvatar(e.target.value)}}
+              onChange={e => {
+                setAvatar(e.target.value);
+              }}
             />
 
             <Input
@@ -107,15 +108,19 @@ const TeacherForm: React.FC = () => {
               label="Whatsapp"
               type="text"
               value={whatsapp}
-              onChange={(e) => {setWhatsapp(e.target.value)}}
+              onChange={e => {
+                setWhatsapp(e.target.value);
+              }}
             />
 
             <Textarea
               name="bio"
               label="Biografia"
               value={bio}
-              onChange={(e) => {setBio(e.target.value)}}
-              />
+              onChange={e => {
+                setBio(e.target.value);
+              }}
+            />
           </fieldset>
 
           <fieldset>
@@ -124,7 +129,9 @@ const TeacherForm: React.FC = () => {
               name="subject"
               label="Matéria"
               value={subject}
-              onChange={(e) => {setSubject(e.target.value)}}
+              onChange={e => {
+                setSubject(e.target.value);
+              }}
               options={[
                 { value: 'Artes', label: 'Artes' },
                 { value: 'Química', label: 'Química' },
@@ -138,7 +145,9 @@ const TeacherForm: React.FC = () => {
               label="Custo da sua hora por aula"
               type="text"
               value={cost}
-              onChange={(e) => {setCost(e.target.value)}}
+              onChange={e => {
+                setCost(e.target.value);
+              }}
             />
           </fieldset>
 
@@ -156,7 +165,9 @@ const TeacherForm: React.FC = () => {
                   name="week_day"
                   label="Dia da semana"
                   value={scheduleItem.week_day}
-                  onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
+                  onChange={e =>
+                    setScheduleItemValue(index, 'week_day', e.target.value)
+                  }
                   options={[
                     { value: '0', label: 'Domingo' },
                     { value: '1', label: 'Segunda-feira' },
@@ -173,7 +184,9 @@ const TeacherForm: React.FC = () => {
                   label="Das"
                   type="time"
                   value={scheduleItem.from}
-                  onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
+                  onChange={e =>
+                    setScheduleItemValue(index, 'from', e.target.value)
+                  }
                 />
 
                 <Input
@@ -181,7 +194,9 @@ const TeacherForm: React.FC = () => {
                   label="Até"
                   type="time"
                   value={scheduleItem.to}
-                  onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
+                  onChange={e =>
+                    setScheduleItemValue(index, 'to', e.target.value)
+                  }
                 />
               </ScheduleItem>
             ))}
@@ -189,18 +204,17 @@ const TeacherForm: React.FC = () => {
 
           <Footer>
             <p>
-              <img src={warningIcon} alt="Aviso importante!"/>
-              Importante <br />
+              <img src={warningIcon} alt="Aviso importante!" />
+              Importante
+              <br />
               Preencha todos os dados
             </p>
-            <button type="submit">
-              Salvar cadastro
-            </button>
+            <button type="submit">Salvar cadastro</button>
           </Footer>
         </form>
       </Content>
     </Container>
   );
-}
+};
 
 export default TeacherForm;

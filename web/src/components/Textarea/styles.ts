@@ -17,9 +17,9 @@ export const Container = styled.div`
     min-height: 8rem;
     resize: vertical;
 
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     padding: 1.2rem 1.6rem;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
 
     background: var(--color-input-background);
     border: 1px solid var(--color-line-in-white);
@@ -34,14 +34,14 @@ export const Container = styled.div`
     position: absolute;
     left: 1.6rem;
     right: 1.6rem;
-    
+
     width: calc(100% - 3.2rem);
     height: 2px;
-    
+
     background: var(--color-primary-light);
   }
 
-  @media(min-width: 700px) {
+  @media (min-width: 700px) {
     & + div {
       margin-top: 0rem;
     }

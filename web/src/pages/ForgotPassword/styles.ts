@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import background from '../../assets/images/background.svg';
 
 export const Container = styled.div`
@@ -31,7 +32,7 @@ export const LogoContainer = styled.div`
 
   h2 {
     margin-top: 0.8rem;
-    
+
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 4.6rem;
@@ -49,7 +50,7 @@ export const FormSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  
+
   width: 40vw;
   height: 100%;
 
@@ -64,12 +65,11 @@ export const FormContainer = styled.div`
 
   h1 {
     width: 27rem;
+    margin-bottom: 1.6rem;
 
     color: var(--color-text-title);
-    font-size: 3.6rem;
     font-weight: 700;
-
-    margin-bottom: 1.6rem;
+    font-size: 3.6rem;
   }
 
   form {
@@ -83,15 +83,14 @@ export const FormContainer = styled.div`
       width: 100%;
 
       padding: 2.4rem;
-
       border: 2px solid var(--color-line-in-white);
-      border-radius: .8rem;
+      border-radius: 0.8rem;
 
       background: var(--color-input-background);
 
       &::placeholder {
         color: var(--color-text-base);
-      };
+      }
     }
 
     button {
@@ -99,14 +98,13 @@ export const FormContainer = styled.div`
 
       margin-top: 4rem;
       border: none;
-      border-radius: .8rem;
+      border-radius: 0.8rem;
 
       background: var(--color-disabled);
       color: var(--color-text-complement);
-
       font: 700 1.6rem Archivo;
 
-      transition: all .3s;
+      transition: all 0.3s;
 
       &:hover {
         color: var(--color-button-text);
@@ -126,6 +124,7 @@ export const Footer = styled.div`
 export const SignInLink = styled.a`
   display: flex;
   flex-direction: column;
+
   color: var(--color-text-complement);
 
   a {
