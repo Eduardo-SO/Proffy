@@ -1,6 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFocused: boolean;
+  isFilled: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +34,7 @@ export const Container = styled.div`
     border: none;
 
     font: 1.6rem Archivo;
+    transition: all 0.4s ease;
   }
 
   &:focus-within::after {
@@ -56,4 +62,18 @@ export const Container = styled.div`
       transform: translateY(1rem);
     }
   }
+
+  ${props =>
+    props.isFilled &&
+    css`
+      label {
+        opacity: 0;
+      }
+
+      &:focus-within {
+        input {
+          transform: translateY(0);
+        }
+      }
+    `}
 `;
