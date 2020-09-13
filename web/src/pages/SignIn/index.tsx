@@ -38,9 +38,21 @@ const SignIn: React.FC = () => {
           <h1>Fazer login</h1>
 
           <form action="">
-            <Input type="email" name="email" label="E-mail" required />
+            <Input
+              type="email"
+              name="email"
+              customClass="first-input"
+              label="E-mail"
+              required
+            />
 
-            <Input type="password" name="password" label="Senha" required />
+            <Input
+              type="password"
+              name="password"
+              customClass="last-input"
+              label="Senha"
+              required
+            />
 
             <FormOptions>
               <Checkbox />

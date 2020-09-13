@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: relative;
 
@@ -20,33 +20,48 @@ export const Container = styled.div<ContainerProps>`
   background: var(--color-input-background);
   border: 1px solid var(--color-line-in-white);
 
-  label {
-    position: absolute;
+  .input-block {
+    flex: 1;
+    position: relative;
 
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    pointer-events: none;
     transition: all 0.4s ease;
+
+    label {
+      position: absolute;
+      width: 100%;
+
+      transition: all 0.4s ease;
+    }
+
+    input {
+      border: none;
+      background: none;
+
+      font: 1.6rem Archivo;
+    }
   }
 
-  input {
-    background: none;
+  button {
     border: none;
+    background: none;
 
-    font: 1.6rem Archivo;
-    transition: all 0.4s ease;
+    cursor: pointer;
   }
 
   &:focus-within::after {
     content: '';
 
     position: absolute;
-    left: 1.6rem;
-    right: 1.6rem;
-    bottom: 0;
+    left: 0;
+    top: 1.6rem;
+    bottom: 1.6rem;
 
-    width: calc(100% - 3.2rem);
-    height: 2px;
+    width: 2px;
+    height: calc(100% - 3.2rem);
 
     background: var(--color-secondary);
   }
@@ -54,11 +69,11 @@ export const Container = styled.div<ContainerProps>`
   &:focus-within {
     label {
       font-size: 1.2rem;
-
       transform: translateY(-1rem);
     }
 
     input {
+      opacity: 1;
       transform: translateY(1rem);
     }
   }
@@ -67,13 +82,13 @@ export const Container = styled.div<ContainerProps>`
     props.isFilled &&
     css`
       label {
-        opacity: 0;
+        font-size: 1.2rem;
+        transform: translateY(-1rem);
       }
 
-      &:focus-within {
-        input {
-          transform: translateY(0);
-        }
+      input {
+        opacity: 1;
+        transform: translateY(1rem);
       }
     `}
 `;

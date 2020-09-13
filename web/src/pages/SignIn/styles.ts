@@ -75,7 +75,17 @@ export const FormContainer = styled.div`
 
     margin-top: 4rem;
 
-    button {
+    .first-input {
+      border-bottom: 0;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .last-input {
+      margin-top: 0;
+      border-radius: 0 0 8px 8px;
+    }
+
+    button[type='submit'] {
       height: 5.6rem;
 
       margin-top: 4rem;
