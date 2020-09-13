@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import background from '../../assets/images/background.svg';
+
+interface SignInButtonProps {
+  isFormFilled: boolean;
+}
 
 export const Container = styled.div`
   display: flex;
@@ -84,27 +88,6 @@ export const FormContainer = styled.div`
       margin-top: 0;
       border-radius: 0 0 8px 8px;
     }
-
-    button[type='submit'] {
-      height: 5.6rem;
-
-      margin-top: 4rem;
-      border: none;
-      border-radius: 0.8rem;
-
-      background: var(--color-disabled);
-      color: var(--color-text-complement);
-      font: 700 1.6rem Archivo;
-
-      transition: all 0.3s;
-
-      &:hover {
-        color: var(--color-button-text);
-        background: var(--color-secondary);
-
-        cursor: pointer;
-      }
-    }
   }
 `;
 
@@ -126,6 +109,39 @@ export const Footer = styled.div`
 
   width: 100%;
   max-width: 35.2rem;
+`;
+
+export const SignInButton = styled.button<SignInButtonProps>`
+  height: 5.6rem;
+
+  margin-top: 4rem;
+  border: none;
+  border-radius: 0.8rem;
+
+  background: var(--color-disabled);
+  color: var(--color-text-complement);
+  font: 700 1.6rem Archivo;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+
+    cursor: pointer;
+  }
+
+  ${props =>
+    props.isFormFilled
+      ? undefined
+      : css`
+          &:hover {
+            background: var(--color-disabled);
+            color: var(--color-text-complement);
+
+            cursor: not-allowed;
+          }
+        `}
 `;
 
 export const SignUpLink = styled.a`

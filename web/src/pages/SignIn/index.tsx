@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -16,11 +16,24 @@ import {
   FormContainer,
   FormOptions,
   Footer,
+  SignInButton,
   SignUpLink,
   TotalConnections,
 } from './styles';
 
 const SignIn: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isFormFilled, setIsFormFilled] = useState(false);
+
+  useEffect(() => {
+    if (email && password) {
+      setIsFormFilled(true);
+    } else {
+      setIsFormFilled(false);
+    }
+  }, [email, password]);
+
   return (
     <Container>
       <LogoSection>
@@ -43,6 +56,7 @@ const SignIn: React.FC = () => {
               name="email"
               customClass="first-input"
               label="E-mail"
+              onChange={e => setEmail(e.target.value)}
               required
             />
 
@@ -51,6 +65,7 @@ const SignIn: React.FC = () => {
               name="password"
               customClass="last-input"
               label="Senha"
+              onChange={e => setPassword(e.target.value)}
               required
             />
 
@@ -60,7 +75,9 @@ const SignIn: React.FC = () => {
               <Link to="/forgot-password">Esqueci minha senha</Link>
             </FormOptions>
 
-            <button type="submit">Entrar</button>
+            <SignInButton isFormFilled={isFormFilled} type="submit">
+              Entrar
+            </SignInButton>
           </form>
         </FormContainer>
 
