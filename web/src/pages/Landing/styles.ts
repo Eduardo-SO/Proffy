@@ -24,7 +24,8 @@ export const PageLandingContent = styled.div`
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas:
       'logo hero hero'
-      'buttons buttons total';
+      'buttons buttons total'
+    ;
 
     max-width: 1100px;
   }
@@ -65,7 +66,7 @@ export const LogoContainer = styled.div`
 
 export const HeroImage = styled.img`
   width: 100%;
-
+  
   @media (min-width: 1100px) {
     grid-area: hero;
 
@@ -90,7 +91,7 @@ export const ButtonsContainer = styled.div`
 
     color: var(--color-button-text);
 
-    transition: background-color 0.3s;
+    transition: background-color .3s;
 
     font: 700 2rem Archivo;
     text-decoration: none;
@@ -101,7 +102,7 @@ export const ButtonsContainer = styled.div`
 
     img {
       width: 4rem;
-      margin-right: 0.6rem;
+      margin-right: .6rem;
     }
   }
 
@@ -121,7 +122,7 @@ export const StudyLink = styled(Link)`
   &:hover {
     background-color: var(--color-primary-light);
   }
-`;
+  `;
 
 export const GiveClassesLink = styled(Link)`
   background-color: var(--color-secondary);
@@ -139,7 +140,7 @@ export const TotalConnections = styled.span`
   font-size: 1.4rem;
 
   img {
-    margin-left: 0.8rem;
+    margin-left: .8rem;
   }
 
   @media (min-width: 1100px) {

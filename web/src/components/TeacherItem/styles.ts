@@ -5,7 +5,7 @@ export const Container = styled.article`
 
   margin-top: 2.4rem;
   border: 1px solid var(--color-line-in-white);
-  border-radius: 0.8rem;
+  border-radius: .8rem;
 
   background: var(--color-box-base);
 
@@ -40,7 +40,7 @@ export const ItemHeader = styled.header`
 
     span {
       display: block;
-      margin-top: 0.4rem;
+      margin-top: .4rem;
       font-size: 1.6rem;
     }
   }
@@ -87,7 +87,7 @@ export const ItemFooter = styled.footer`
     font: 700 1.4rem Archivo;
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: .2s;
 
     &:hover {
       background: var(--color-secondary-dark);

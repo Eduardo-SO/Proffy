@@ -1,94 +1,47 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-interface ContainerProps {
-  isFocused: boolean;
-  isFilled: boolean;
-}
-
-export const Container = styled.div<ContainerProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const Container = styled.div`
   position: relative;
 
-  width: 100%;
-  height: 7.2rem;
-  padding: 1.4rem 1.6rem;
-  margin-top: 0.8rem;
-  border-radius: 0.8rem;
-
-  background: var(--color-input-background);
-  border: 1px solid var(--color-line-in-white);
-
-  .input-block {
-    flex: 1;
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    transition: all 0.4s ease;
-
-    label {
-      position: absolute;
-      width: 100%;
-
-      transition: all 0.4s ease;
-    }
-
-    input {
-      border: none;
-      background: none;
-
-      font: 1.6rem Archivo;
-    }
+  & + & {
+    margin-top: 1.4rem;
   }
 
-  button {
-    border: none;
-    background: none;
+  label {
+    font-size: 1.4rem;
+  }
 
-    cursor: pointer;
+  input {
+    width: 100%;
+    height: 5.6rem;
+
+    margin-top: .8rem;
+    padding: 0 1.6rem;
+    border-radius: .8rem;
+
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+
+    font: 1.6rem Archivo;
   }
 
   &:focus-within::after {
     content: '';
 
     position: absolute;
-    left: 0;
-    top: 1.6rem;
-    bottom: 1.6rem;
-
-    width: 2px;
-    height: calc(100% - 3.2rem);
-
-    background: var(--color-secondary);
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+    
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    
+    background: var(--color-primary-light);
   }
 
-  &:focus-within {
-    label {
-      font-size: 1.2rem;
-      transform: translateY(-1rem);
-    }
-
-    input {
-      opacity: 1;
-      transform: translateY(1rem);
+  @media(min-width: 700px) {
+    & + div {
+      margin-top: 0rem;
     }
   }
-
-  ${props =>
-    props.isFilled &&
-    css`
-      label {
-        font-size: 1.2rem;
-        transform: translateY(-1rem);
-      }
-
-      input {
-        opacity: 1;
-        transform: translateY(1rem);
-      }
-    `}
 `;

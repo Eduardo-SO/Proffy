@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   background-color: var(--color-primary);
 
-  @media (min-width: 700px) {
+  @media(min-width: 700px) {
     height: 340px;
   }
 `;
@@ -28,14 +28,14 @@ export const TopBarContainer = styled.div`
 
   a {
     height: 3.2em;
-    transition: opacity 0.2s;
+    transition: opacity .2s;
 
     &:hover {
-      opacity: 0.6;
+      opacity: .6;
     }
   }
 
-  @media (min-width: 700px) {
+  @media(min-width: 700px) {
     max-width: 1100px;
   }
 `;
@@ -60,13 +60,13 @@ export const HeaderContent = styled.div`
     line-height: 2.6rem;
   }
 
-  @media (min-width: 700px) {
+  @media(min-width: 700px) {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
+    
     max-width: 740px;
 
     margin: 0 auto;

@@ -19,7 +19,7 @@ export const Content = styled.main`
   padding-top: 6.4rem;
   border-radius: 0.8rem;
 
-  background: var(--color-primary-light);
+  background: var(--color-box-base);
 
   fieldset {
     border: 0;
@@ -35,7 +35,7 @@ export const Content = styled.main`
       margin-bottom: 2.4rem;
       padding-bottom: 1.6rem;
 
-      border-bottom: 1px solid var(--color-line-in-white);
+      border-bottom: 1px solidvar(--color-line-in-white);
 
       color: var(--color-text-title);
 
@@ -49,7 +49,7 @@ export const Content = styled.main`
         font: 700 1.6rem Archivo;
         cursor: pointer;
 
-        transition: color 0.2s;
+        transition: color .2s;
 
         :hover {
           color: var(--color-primary-dark);
@@ -122,7 +122,8 @@ export const Footer = styled.footer`
       background: var(--color-secondary-dark);
     }
   }
-`;
+  
+`
 
 export const ScheduleItem = styled.div`
   display: grid;
@@ -132,4 +133,4 @@ export const ScheduleItem = styled.div`
   .input-block {
     margin-top: 0 !important;
   }
-`;
+`
